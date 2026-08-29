@@ -1,0 +1,27 @@
+model:
+  id: lts_ca_fourier_tenv
+  paper_label: LTS
+  backbone: LightTransolver
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  mlp_ratio: 4
+  dropout: 0.0
+  routing_cycles: 1
+  activation_checkpointing: false
+  component_adaptation:
+    enabled: true
+    components: 17
+    pooled_statistics: [mean, amax]
+    detach_pool_source: false
+    affine_implementation: contiguous_custom_backward
+  fourier_features:
+    enabled: true
+    bands: 10
+  trajectory_envelope:
+    enabled: true
+    hidden_dim: 64
+    conditioned_by: global_design_variables_and_time
+    displacement_only: true
+  expected_parameters: 8335055

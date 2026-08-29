@@ -1,0 +1,15 @@
+model:
+  id: geotransolver
+  label: GeoTransolver
+  implementation: physicsnemo.experimental.models.geotransolver.GeoTransolver
+  attention_type: GALE
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  mlp_ratio: 4
+  dropout: 0.0
+  local_hidden_dim: 32
+  radii: [0.01, 0.05, 0.25, 1.0, 2.5, 5.0]
+  neighbors_in_radius: [8, 16, 32, 32, 64, 128]
+  expected_parameters: 27575024

@@ -1,0 +1,13 @@
+model:
+  id: transolver
+  label: Transolver
+  implementation: physicsnemo.models.transolver.Transolver
+  reference_profile: transolver_volume
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  mlp_ratio: 4
+  dropout: 0.0
+  activation_checkpointing: false
+  expected_parameters: 8967012

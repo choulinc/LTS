@@ -1,0 +1,10 @@
+model:
+  id: transolver3
+  label: Transolver-3
+  reference_profile: author_drivaerml_volume_native
+  hidden_dim: 256
+  layers: 16
+  heads: 8
+  physics_slices_per_head: 64
+  activation_checkpointing: official_policy
+  expected_parameters: 7603844

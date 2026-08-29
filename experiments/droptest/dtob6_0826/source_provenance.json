@@ -1,0 +1,27 @@
+{
+  "protocol": "DTOB6-0826",
+  "historical_git": {
+    "commit": "7676ad43105d11046c38dcdb73a2f2ecde40d4ed",
+    "dirty": true,
+    "warning": "The commit alone does not identify the executed source. Use the archived source hashes below."
+  },
+  "historical_reference_sha256": {
+    "reference/droptest_official_backbones_20260826.py": "a9c089881ffc0f972166d247e9adf7a62bbf32e04e42a2a5e079bf48b9bf8832",
+    "reference/droptest_official192_0813_full.py": "ff8a5b1b216b8f20b13ab6704d4d3e655f44cb9e1c6c0e44e49b6d6ebac9fb2a",
+    "reference/official_192_benchmark.py": "9e18f860eb8a18e633c0c128cf60bf660b693a8c780805e25d2b23f9b7e81221",
+    "reference/paper_metrics.py": "35b728a632e8ff3dbd5c619e3b361b0e708f58cf85ced25d0ae9d97a1349a991",
+    "reference/source_overlay/light_transolver.py": "41ba6b8fdf12f3321c31a371057775e68339f172a84c60a0aed90ec586b5441e",
+    "reference/source_overlay/cclts.py": "3083073ad49c9f325987b9126e6dd2f0f0eb9f56a978e344999f2a9027038b4a",
+    "reference/source_overlay/cclts_contiguous_backward.py": "7b129c905945d037054e952132d3f8804c72b8d80faad169d7404fa9326e9874",
+    "reference/source_overlay/adelts_route1.py": "1c5ee45fc04c05ad8277e486751c4252e3ec09a2b500bbe9598b91598aaaeb1d",
+    "reference/source_overlay/route2_run_amax_prototype.py": "3d60f5233c8cb247898e94a790a918b9f6f259bfb848c8036028f29ba6a37e4a",
+    "reference/source_overlay/route2_run_mean_prototype.py": "8745c5aa8570917668ba8189bd153f7648659feb93146b4227f9ad999bbd73ae",
+    "reference/source_overlay/displacement_rms_models.py": "3f4523ccee2eb275f11ab2739cf2b73cd4c0987ff7e437d19fae78f24c0e35f3"
+  },
+  "model_parameter_identities": {
+    "lts": 8018444,
+    "lts_ca": 8248716,
+    "lts_ca_fourier_tenv": 8335055
+  },
+  "release_note": "src/lts reorganizes the same model logic into an installable namespace; the reference directory preserves the historical files byte-for-byte."
+}

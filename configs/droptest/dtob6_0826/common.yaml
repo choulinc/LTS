@@ -1,0 +1,102 @@
+protocol:
+  id: DTOB6-0826
+  frozen: true
+  description: DropTest official-backbone six-model paper table
+
+dataset:
+  root: null  # supplied by --data-root or DROPTEST_ROOT
+  split_counts:
+    train: 132
+    validation: 30
+    test: 30
+  nodes: 76065
+  timesteps: 100
+  split_id_hashes:
+    train: c2f8af3d390f9d99bce28b7e2703894642fc186b126607161dfe672476cb2d99
+    validation: 5dee654ca388ebfeca408bf72bcc6a85326c89dc4761dee3ce495720aa372778
+    test: baada19bb359c258eaa537ee76f2863b014f359c6577d5ac43aa293106453284
+  split_manifest_sha256: b0ab7ed491e88bdf759b7be89beb499cb766c3c878ccdad38e02cd5c3d30a4cd
+  global_features_sha256: 33cd8cc4bb3f716100101a28cbbe07e51fdd3c55cb1f0b70d37dc6710c004b99
+  source_anomaly_audit_sha256: 0b9aaf306027b2e966cbd26566c85b36af3eb0daac9c313adf5a558b09ddf2e9
+
+task:
+  geometry_input: normalized_initial_coordinates
+  geometry_dim: 3
+  functional_input:
+    - normalized_coordinates_3d
+    - global_design_variables_8d
+    - normalized_target_time_1d
+  functional_dim: 12
+  output:
+    - displacement_x
+    - displacement_y
+    - displacement_z
+    - von_mises_stress
+  output_dim: 4
+  prediction_steps: 99
+  global_feature_order:
+    - e_scale_mat1
+    - e_scale_mat4
+    - e_scale_mat5
+    - e_scale_mat8
+    - e_scale_mat9
+    - rwall_orientation_rx
+    - rwall_orientation_ry
+    - rwall_orientation_rz
+
+normalization:
+  fit_split: train
+  displacement:
+    mode: axiswise_rms_without_mean_subtraction
+    rms: [0.18262815016230943, 0.2003429001474359, 0.1497915162343435]
+  position_std: [15.862274169921875, 24.704570770263672, 2.3351430892944336]
+  stress: train_mean_and_standard_deviation
+  hashes:
+    displacement_rms_stats.json: bb4925d89b45d3f21c0ba44e051e7e008da72bdfac0d8812c7d60b4dd2b4fb70
+    dynamic_target_stats.json: 0b46c33d16c8085ced6373ec9263bdff89a4930bdb44edff396775f19b956617
+    feature_stats.json: 9e3b3d37cae9bac4cc1aab21fd7ea3fb478a160860c0b3d443a44512cc3a1e4b
+    node_stats.json: 8b3eb61991d4339923bd923d903fccb9664572c25c5731a267c1b7493f6925f8
+
+training:
+  epochs: 25
+  seeds: [7, 17, 27]
+  precision: bf16_autocast
+  grad_scaler: false
+  optimizer:
+    name: Adam
+    learning_rate: 1.0e-4
+    betas: [0.9, 0.999]
+    weight_decay: 0.0
+  scheduler:
+    name: CosineAnnealingLR
+    t_max: 25
+    eta_min: 3.0e-7
+    step_unit: epoch
+  warmup: false
+  gradient_clipping: false
+  batch_size: 1
+  gradient_accumulation: 1
+  effective_global_batch: 1
+  sample_definition: one_trajectory_one_target_timestep
+  warm_start: false
+
+checkpoint_selection:
+  split: validation
+  metric: equal_field_physical_relative_l2
+  formula: 0.5 * displacement_trajectory_macro_rel_l2 + 0.5 * stress_trajectory_macro_rel_l2
+  uses_test: false
+  run_all_epochs: true
+
+evaluation:
+  split: held_out_test
+  evaluate_once_after_training: true
+  aggregation: mean_and_sample_standard_deviation_over_seeds
+  position_relative_l2: physical_all_nodes_all_99_steps_per_trajectory
+  displacement_relative_l2: physical_xyz_joint_all_nodes_all_99_steps_per_trajectory
+  stress_relative_l2: physical_all_nodes_all_99_steps_per_trajectory
+
+profiling:
+  hardware: one_NVIDIA_H200
+  inference_scope: complete_99_step_trajectory
+  train_memory: peak_allocated
+  train_wall_time: complete_25_epoch_run
