@@ -440,12 +440,13 @@ def draw(rows: list[dict[str, object]]) -> None:
     ax.text(
         box_x + box_w / 2,
         box_y + box_h - 0.035,
-        "Peak Train Alloc. Mem.",
+        "Peak Train Alloc.\nMemory",
         transform=ax.transAxes,
         ha="center",
         va="center",
-        fontsize=11.8,
+        fontsize=11.6,
         fontweight="bold",
+        linespacing=0.90,
         color="#3e464c",
         zorder=8,
     )
