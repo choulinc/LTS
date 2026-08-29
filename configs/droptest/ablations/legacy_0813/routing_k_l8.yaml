@@ -1,0 +1,19 @@
+protocol: DropTest-0813-routing-K-L8
+status: legacy_matched_ablation
+controlled_variable: shared_route_resampling_count_only
+
+model:
+  base: lts_ca_fourier_tenv
+  hidden_dim: 256
+  layers: 8
+  heads: 8
+  physics_slices: 128
+  expected_parameters: 5949007
+  shared_routing_weights: true
+  routing_cycles:
+    1: [8]
+    2: [4, 4]
+    4: [2, 2, 2, 2]
+    8: [1, 1, 1, 1, 1, 1, 1, 1]
+
+warning: This architecture scale is not DTOB6-0826 and must not be merged with its routing study.

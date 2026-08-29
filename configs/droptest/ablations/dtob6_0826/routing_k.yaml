@@ -1,0 +1,23 @@
+protocol: DTOB6-0826-routing-K
+ablation: routing_frequency
+controlled_variable: shared_route_resampling_count_only
+
+model:
+  base: lts_ca_fourier_tenv
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  expected_parameters: 8335055
+  shared_routing_weights: true
+  handoff: parameter_free_point_residual
+  routing_cycles:
+    1: [12]
+    2: [6, 6]
+    3: [4, 4, 4]
+    4: [3, 3, 3, 3]
+    6: [2, 2, 2, 2, 2, 2]
+    8: [2, 2, 2, 2, 1, 1, 1, 1]
+    12: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+
+common_protocol: ../../dtob6_0826/common.yaml

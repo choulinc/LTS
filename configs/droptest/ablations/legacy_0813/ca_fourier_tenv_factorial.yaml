@@ -1,0 +1,26 @@
+protocol: DropTest-0813-factorial
+status: legacy_matched_ablation
+factor_order: [component_adaptation, fourier_features, trajectory_envelope]
+
+model:
+  backbone: LightTransolver
+  hidden_dim: 256
+  layers: 6
+  heads: 8
+  physics_slices: 128
+  mlp_ratio: 4
+  dropout: 0.0
+  routing_cycles: 1
+  fourier_bands_when_enabled: 10
+  trajectory_envelope_width_when_enabled: 64
+  factorial_cells:
+    "000": lts
+    "001": lts_tenv
+    "010": lts_fourier
+    "011": lts_fourier_tenv
+    "100": lts_ca
+    "101": lts_ca_tenv
+    "110": lts_ca_fourier
+    "111": cclts_fourier_tenv
+
+warning: This architecture scale is not DTOB6-0826 and must not be merged with its main table.

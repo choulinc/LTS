@@ -11,3 +11,14 @@ for peak allocated training memory and inference latency.
 
 Do not mix memory columns between these files without reading the profiling
 definition.
+
+Completed DropTest ablations are in [`ablations/droptest/`](ablations/droptest/):
+
+- `dtob6_0826_components.csv`: paper-scale plain/CA/full LTS comparison;
+- `dtob6_0826_routing_k_paper.csv`: percentage-unit routing-frequency view;
+- `dtob6_0826_routing_k_raw.csv` and `*_per_seed_raw.csv`: ratio-unit formal
+  aggregates;
+- `legacy_0813_*`: the separate 128-slice factorial and routing study.
+
+The formal and legacy namespaces are not interchangeable. See
+[`protocols/droptest_ablations.md`](../protocols/droptest_ablations.md).

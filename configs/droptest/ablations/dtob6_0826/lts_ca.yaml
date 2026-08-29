@@ -1,0 +1,26 @@
+protocol: DTOB6-0826
+ablation: component_stack
+
+model:
+  id: lts_ca
+  backbone: LightTransolver
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  mlp_ratio: 4
+  dropout: 0.0
+  routing_cycles: 1
+  component_adaptation:
+    enabled: true
+    components: 17
+    pooled_statistics: [mean, amax]
+    detach_pool_source: false
+    affine_implementation: contiguous_custom_backward
+  fourier_features:
+    enabled: false
+  trajectory_envelope:
+    enabled: false
+  expected_parameters: 8248716
+
+common_protocol: ../../dtob6_0826/common.yaml

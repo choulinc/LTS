@@ -1,0 +1,33 @@
+{
+  "csv_import_policy": "Content-preserving CSV import with CRLF normalized to LF by .gitattributes.",
+  "sources": [
+    {
+      "repository_file": "dtob6_0826_routing_k_raw.csv",
+      "repository_sha256": "8e2457dcd601e92ed0220bcb630926c401cfa2c33f0fb6787514301c6871c425",
+      "source_experiment": "droptest_official_backbones_k12346812_20260827",
+      "source_file": "k_table.csv",
+      "source_sha256": "3417b8b7be61ce1a3713b902e3b57f3ea490befb8c6a91669b71619322111e61"
+    },
+    {
+      "repository_file": "dtob6_0826_routing_k_per_seed_raw.csv",
+      "repository_sha256": "b158bbf4bfeaacbc1bb65459b24c848cead5ba69ff35eb6e360874e871c23620",
+      "source_experiment": "droptest_official_backbones_k12346812_20260827",
+      "source_file": "per_seed.csv",
+      "source_sha256": "f2518c1185f98bc0a4d310dfeba1b7ae9c5bda39c8d0364b75bab1efb78803af"
+    },
+    {
+      "repository_file": "legacy_0813_ca_fourier_tenv_factorial_raw.csv",
+      "repository_sha256": "ea6d0a020da3a4120fd8593e1f0aa61784e17180135a0cff1c41687c9590323c",
+      "source_experiment": "droptest_official192_0813_full_20260825",
+      "source_file": "ca_fourier_tenv_factorial.csv",
+      "source_sha256": "9e94b0533e3592b3b22b4c502dc6ccc4e6b82a5b6ae0d683d61e7597ffc48bea"
+    },
+    {
+      "repository_file": "legacy_0813_routing_k_l8_raw.csv",
+      "repository_sha256": "cb062e74001419db83140b837a70a68a6d5352d6a5aa8e46a68f502c1247be70",
+      "source_experiment": "droptest_official192_0813_full_20260825",
+      "source_file": "resampling_k1_k2_k4_k8.csv",
+      "source_sha256": "e80e84e80f53e786f0ec11ac0aa28e156fb88c441e7b84dfc2569519b2db037f"
+    }
+  ]
+}

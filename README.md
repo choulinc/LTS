@@ -24,10 +24,13 @@ Additional benchmark adapters will be added without rewriting the frozen
 ```text
 src/lts/                         reusable LTS modules
 configs/droptest/dtob6_0826/    frozen paper configuration
+configs/droptest/ablations/     versioned ablation configurations
 experiments/droptest/dtob6_0826 benchmark adapter and provenance
+experiments/droptest/ablations/ ablation registry and historical sources
 protocols/                      human-readable experiment contracts
 metadata/                       split IDs and checksums, never raw data
 results/main_tables/            frozen CSV tables used by the paper
+results/ablations/              frozen ablation aggregates and paper views
 scripts/                        training, evaluation, aggregation entry points
 slurm/                          cluster launch templates
 tests/                          architecture and protocol invariants
@@ -63,6 +66,7 @@ complete LTS model (`LTS + CA + Fourier + TEnv`) as **LTS**.
 - Machine-readable table: [`results/main_tables/dtob6_0826_paper.csv`](results/main_tables/dtob6_0826_paper.csv)
 - Raw three-seed aggregate: [`results/main_tables/dtob6_0826_raw.csv`](results/main_tables/dtob6_0826_raw.csv)
 - Protocol: [`protocols/droptest_dtob6_0826.md`](protocols/droptest_dtob6_0826.md)
+- Ablations: [`experiments/droptest/ablations/README.md`](experiments/droptest/ablations/README.md)
 
 The held-out test set is used once after validation-only checkpoint selection.
 No held-out trajectory is used for optimization or model selection.
