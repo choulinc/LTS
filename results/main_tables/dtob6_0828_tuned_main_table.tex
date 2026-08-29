@@ -1,0 +1,70 @@
+% Validation-tuned paper view generated from dtob6_0828_tuned_paper.csv.
+\begin{table*}[!t]
+  \centering
+  \caption{Main results on DropTest under a unified evaluation and
+  single-H200 profiling protocol.}
+  \label{tab:main_results}
+  \setlength{\tabcolsep}{3.2pt}
+  \renewcommand{\arraystretch}{1.10}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lcccccc}
+    \toprule
+    & \multicolumn{2}{c}{Accuracy}
+    & \multicolumn{4}{c}{Efficiency} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-7}
+    Model
+    & Disp. Rel. $\mathrm{L}_2$ $\downarrow$
+    & Stress Rel. $\mathrm{L}_2$ $\downarrow$
+    & Train-step Latency $\downarrow$
+    & Peak Train Alloc. Mem. $\downarrow$
+    & Inference Latency $\downarrow$
+    & Params. \\
+    & (\%) & (\%) & (ms/step) & (GiB) & (ms/traj.) & (M) \\
+    \midrule
+    Transolver
+    & $\underline{0.4676 \pm 0.0180}$ & $3.5405 \pm 0.1670$
+    & $192.984 \pm 0.098$ & $28.154$
+    & $4320.382 \pm 1.113$ & $8.967$ \\
+    GeoTransolver
+    & $0.5905 \pm 0.2407$ & $\underline{1.9097 \pm 0.1443}$
+    & $361.835 \pm 0.304$ & $45.102$
+    & $10453.148 \pm 3.931$ & $27.575$ \\
+    GeoTS-FLARE
+    & $0.5300 \pm 0.0884$ & $\bm{1.8050 \pm 0.0787}$
+    & $276.032 \pm 0.100$ & $29.828$
+    & $9334.003 \pm 29.640$ & $26.326$ \\
+    Transolver++
+    & $0.5068 \pm 0.0598$ & $4.2234 \pm 0.1422$
+    & $\bm{26.993 \pm 0.028}$ & $\bm{2.027}$
+    & $\underline{793.783 \pm 0.958}$ & $\bm{1.744}$ \\
+    Transolver-3
+    & $\bm{0.3789 \pm 0.0111}$ & $3.5771 \pm 0.0879$
+    & $184.168 \pm 49.971$ & $\underline{3.690}$
+    & $4463.005 \pm 11.213$ & $\underline{7.604}$ \\
+    \midrule
+    \textbf{LTS (Ours)}
+    & $0.6306 \pm 0.0443$ & $2.3498 \pm 0.0799$
+    & $\underline{27.723 \pm 0.037}$ & $4.940$
+    & $\bm{574.236 \pm 2.297}$ & $8.348$ \\
+    \multicolumn{1}{r}{\scriptsize vs. Transolver}
+    & {\scriptsize $\uparrow 0.1631$ pp}
+    & {\scriptsize $\downarrow 1.1907$ pp}
+    & {\scriptsize $\downarrow 85.6\%$}
+    & {\scriptsize $\downarrow 82.5\%$}
+    & {\scriptsize $\downarrow 86.7\%$}
+    & {\scriptsize $\downarrow 6.9\%$} \\
+    \bottomrule
+  \end{tabular}%
+  }
+  \vspace{3pt}
+  \begin{minipage}{0.99\textwidth}
+  \footnotesize
+  \textbf{Notes.}
+  LTS denotes the full model selected exclusively on the validation set.
+  Latency and peak memory are profiled on a single H200; train-step latency
+  averages 50 timed steps after 20 warm-up steps. Bold and underlined values
+  denote the best and second-best results. Training details and the
+  validation-only configuration-selection protocol are provided in the
+  experimental appendix.
+  \end{minipage}
+\end{table*}

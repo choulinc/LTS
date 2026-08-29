@@ -20,9 +20,10 @@ The dependency and exact historical source boundary are documented in
 
 ## Repository status
 
-The first public snapshot contains the frozen `DTOB6-0826` DropTest protocol,
-model identities, split hashes, paper table, and the exact LTS model overlay
-used by the experiment. Raw simulation data and checkpoints are not committed.
+The repository contains the frozen `DTOB6-0826` DropTest protocol, the
+validation-only `DTOB6-0828` LTS selection, model identities, split hashes,
+paper table, and the exact LTS model overlay used by the experiment. Raw
+simulation data and checkpoints are not committed.
 Additional benchmark adapters will be added without rewriting the frozen
 `DTOB6-0826` files.
 
@@ -65,19 +66,23 @@ python scripts/validate_dataset.py \
 
 ## Frozen paper result
 
-`DTOB6-0826` denotes the official-backbone DropTest table trained for 25
+`DTOB6-0826` denotes the official-backbone DropTest comparison trained for 25
 epochs with seeds 7, 17, and 27. Five external baselines retain their
 model-specific official backbone scales. The paper comparison reports the
-complete LTS model (`LTS + CA + Fourier + TEnv`) as **LTS**.
+validation-selected complete model (`LTS + CA + Fourier + TEnv`) as **LTS**.
 
-- Machine-readable table: [`results/main_tables/dtob6_0826_paper.csv`](results/main_tables/dtob6_0826_paper.csv)
+- Current machine-readable table: [`results/main_tables/dtob6_0828_tuned_paper.csv`](results/main_tables/dtob6_0828_tuned_paper.csv)
+- Frozen untuned table: [`results/main_tables/dtob6_0826_paper.csv`](results/main_tables/dtob6_0826_paper.csv)
 - Raw three-seed aggregate: [`results/main_tables/dtob6_0826_raw.csv`](results/main_tables/dtob6_0826_raw.csv)
 - Protocol: [`protocols/droptest_dtob6_0826.md`](protocols/droptest_dtob6_0826.md)
+- LTS selection: [`protocols/droptest_dtob6_0828_tuning.md`](protocols/droptest_dtob6_0828_tuning.md)
+- Accuracy--efficiency figure: [`results/figures/droptest_accuracy_efficiency_bottleneck_20260829/`](results/figures/droptest_accuracy_efficiency_bottleneck_20260829/)
 - Ablations: [`experiments/droptest/ablations/README.md`](experiments/droptest/ablations/README.md)
 - Backbone sources: [`docs/backbone_sources.md`](docs/backbone_sources.md)
 
-The held-out test set is used once after validation-only checkpoint selection.
-No held-out trajectory is used for optimization or model selection.
+The held-out test set is used once after validation-only checkpoint and LTS
+configuration selection. No held-out trajectory is used for optimization or
+model selection.
 
 ## Reproducibility policy
 

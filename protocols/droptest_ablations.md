@@ -14,6 +14,12 @@ uses the following nested configurations:
 This is a nested component study, not a complete factorial: it does not by
 itself identify isolated Fourier and TEnv main effects.
 
+These ablations use the original 10-band, width-64, end-to-end component
+pooling configuration. They are retained as controlled untuned ablations; the
+paper main row is the later validation-selected 16-band, width-128, detached
+configuration documented in
+[`droptest_dtob6_0828_tuning.md`](droptest_dtob6_0828_tuning.md).
+
 The formal routing study fixes the complete LTS, total depth at 12, all
 parameters, and shared routing weights. The only controlled change is routing
 frequency `K`. The latent-block layouts are recorded in
@@ -32,6 +38,6 @@ matched ablation and must not combine its rows with DTOB6-0826.
 - The incomplete `droptest_official_backbones_k1248_20260827` directory is not
   authoritative; the completed `k12346812` run supersedes it.
 - Validation-only candidates from the 0828 tuning search are not reported as
-  held-out results.
+  held-out results; only the locked winner has a held-out evaluation.
 - Results lacking a frozen aggregate and traceable three-seed source are not
   included.

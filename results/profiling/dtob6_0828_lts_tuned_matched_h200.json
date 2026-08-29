@@ -1,0 +1,44 @@
+{
+  "format": "droptest_lts_tuned_matched_h200_profile_release_v1",
+  "status": "PASS",
+  "model": "LTS",
+  "selected_configuration": {
+    "fourier_bands": 16,
+    "temporal_envelope_width": 128,
+    "detach_component_pool_source": true,
+    "routing_cycles": 1
+  },
+  "hardware": "NVIDIA H200",
+  "precision": "BF16 autocast, no GradScaler",
+  "batch_size": 1,
+  "node_count": 76065,
+  "parameter_count": 8348175,
+  "optimizer": {
+    "name": "fused Adam",
+    "learning_rate": 0.0001,
+    "betas": [0.9, 0.999],
+    "weight_decay": 0.0
+  },
+  "timed_region": "preloaded CUDA sample; BF16 forward + formal normalized loss + backward + fused Adam optimizer.step",
+  "excluded": [
+    "dataloader",
+    "host-to-device transfer",
+    "zero_grad",
+    "finite checks",
+    "validation",
+    "checkpointing",
+    "first-use initialization"
+  ],
+  "warmup_steps": 20,
+  "measured_steps": 50,
+  "train_step_latency_ms": {
+    "mean": 27.723122596740723,
+    "sample_std": 0.03655260131113217,
+    "median": 27.717568397521973,
+    "minimum": 27.62985610961914,
+    "maximum": 27.825151443481445
+  },
+  "peak_allocated_gib": 4.939683437347412,
+  "peak_reserved_gib": 6.44921875,
+  "raw_cluster_profile_sha256": "01a1c14d0bc7718293d4cbb9d12ccdb3409ecb61e6a2a5b07fa75258ddc77f18"
+}

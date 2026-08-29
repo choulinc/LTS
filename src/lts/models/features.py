@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Frozen Fourier and trajectory-envelope add-ons used by DTOB6-0826."""
+"""Fourier and trajectory-envelope add-ons used by the DropTest LTS models."""
 
 from __future__ import annotations
 
@@ -11,8 +11,8 @@ import torch.nn as nn
 from .light_transolver import LightTransolver
 
 
-DTOB6_FOURIER_BANDS = 10
-DTOB6_TIME_ENVELOPE_WIDTH = 64
+DTOB6_FOURIER_BANDS = 16
+DTOB6_TIME_ENVELOPE_WIDTH = 128
 DTOB6_ARCH_SEED_OFFSET = 771013
 
 

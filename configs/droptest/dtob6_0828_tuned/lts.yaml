@@ -1,0 +1,39 @@
+model:
+  id: lts_ca_fourier_tenv
+  paper_label: LTS
+  backbone: LightTransolver
+  hidden_dim: 256
+  layers: 12
+  heads: 8
+  physics_slices: 256
+  mlp_ratio: 4
+  dropout: 0.0
+  routing_cycles: 1
+  activation_checkpointing: false
+  component_adaptation:
+    enabled: true
+    components: 17
+    pooled_statistics: [mean, amax]
+    detach_pool_source: true
+    affine_implementation: contiguous_custom_backward
+  fourier_features:
+    enabled: true
+    bands: 16
+  trajectory_envelope:
+    enabled: true
+    hidden_dim: 128
+    conditioned_by: global_design_variables_and_time
+    displacement_only: true
+  expected_parameters: 8348175
+
+selection:
+  split: validation
+  effective_candidates: 12
+  seeds: [7, 17, 27]
+  ranking_metric: mean_validation_checkpoint_selection_metric
+  held_out_test_used: false
+
+provenance:
+  implementation: src/lts/models/light_transolver.py
+  matched_backbone_source: configs/droptest/dtob6_0826/transolver.yaml
+  matched_fields: [hidden_dim, layers, heads, physics_slices, mlp_ratio, dropout]

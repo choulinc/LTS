@@ -2,7 +2,9 @@
 
 `DTOB6-0826` is the official-backbone DropTest main-table experiment completed
 on 2026-08-26. It must not be confused with the earlier `DropTest-0813`
-experiment or the later validation-tuning search.
+experiment. The paper LTS row uses the subsequent validation-only
+[`DTOB6-0828`](droptest_dtob6_0828_tuning.md) configuration selection while
+retaining this dataset and training protocol.
 
 ## Data
 
@@ -49,14 +51,20 @@ their official or author-released model-specific depth, slice count, and
 checkpoint policy. LTS uses the Transolver volume scale (width 256, 12 layers,
 8 heads, 256 slices) with one persistent routing cycle, 17-component output
 adaptation, Fourier features, and a displacement-only trajectory envelope.
+The selected paper configuration uses 16 Fourier bands, envelope width 128,
+and detached component-pooling source features; all five external baselines
+remain the frozen DTOB6-0826 runs.
 
 ## Metrics and efficiency
 
 Position, displacement, and stress Relative-L2 are computed per held-out
 trajectory across all 76,065 nodes and all 99 predicted steps, then macro
 averaged across trajectories and summarized as mean plus sample standard
-deviation across seeds.
+deviation across seeds. The compact main table reports displacement and stress;
+position remains available in the raw result files.
 
-Efficiency uses a single NVIDIA H200. `Peak Train Alloc. Mem.` means maximum
-allocated GPU memory during training, not reserved or inference memory.
-Inference latency covers one complete 99-step trajectory.
+Efficiency uses a single NVIDIA H200. Train-step latency includes BF16 forward,
+the formal normalized loss, backward, and fused Adam update for one preloaded
+sample, averaged over 50 steps after 20 warm-up steps. `Peak Train Alloc. Mem.`
+means maximum allocated GPU memory within that training profile, not reserved
+or inference memory. Inference latency covers one complete 99-step trajectory.

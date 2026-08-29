@@ -29,4 +29,20 @@ def test_dtob6_lts_parameter_identities() -> None:
 
     torch.manual_seed(7)
     full = build_lts(LTSConfig(), node_component_index=parts)
-    assert parameters(full) == 8_335_055
+    assert parameters(full) == 8_348_175
+    assert full.detach_training_pool_source is True
+
+
+def test_untuned_full_lts_identity_remains_reproducible() -> None:
+    parts = torch.arange(17, dtype=torch.long)
+    torch.manual_seed(7)
+    original = build_lts(
+        LTSConfig(
+            fourier_bands=10,
+            envelope_width=64,
+            detach_component_pool_source=False,
+        ),
+        node_component_index=parts,
+    )
+    assert parameters(original) == 8_335_055
+    assert original.detach_training_pool_source is False

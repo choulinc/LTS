@@ -1,0 +1,269 @@
+{
+  "accuracy_definition": "100 * arithmetic mean across seeds 7,17,27 of 0.5 * (displacement_physical_relative_l2_macro + stress_physical_relative_l2_macro); this is the latest compact main-table equal-field definition",
+  "breakdown_categories": [
+    "Slice-weight\nComputation",
+    "Mesh\u2192slice",
+    "Latent",
+    "Slice\u2192mesh",
+    "Mesh FFN",
+    "Component\nadaptation",
+    "Other\ninstrumented",
+    "Unattributable"
+  ],
+  "breakdown_percent": {
+    "lts_ca_fourier_tenv": {
+      "Component adaptation": 6.305442663971492,
+      "Latent": 6.725859229938388,
+      "Mesh FFN": 4.713074421687286,
+      "Mesh\u2192slice": 25.662559385847864,
+      "Other instrumented": 6.692133591827505,
+      "Slice-weight Computation": 23.10408568749407,
+      "Slice\u2192mesh": 2.051840293296814,
+      "Unattributable": 24.74500472593658
+    },
+    "transolver": {
+      "Component adaptation": 0.0,
+      "Latent": 0.23590028560071127,
+      "Mesh FFN": 7.946764079670155,
+      "Mesh\u2192slice": 44.15982124103737,
+      "Other instrumented": 3.282771613467403,
+      "Slice-weight Computation": 40.890357510601255,
+      "Slice\u2192mesh": 3.4843852696230955,
+      "Unattributable": 0.0
+    }
+  },
+  "format": "droptest_accuracy_efficiency_bottleneck_20260829_v1",
+  "latency_definition": "matched single-H200 BF16 batch-1 dedicated profile; preloaded CUDA sample; 20 warmups + 50 measured steps; BF16 forward + formal loss + backward + fused Adam optimizer.step; dataloader and zero_grad excluded",
+  "memory_definition": "maximum allocated CUDA memory from the same matched 50-step H200 profile",
+  "reference_image": "/home/choulin420/scp/\u622a\u5716 2026-08-28 \u4e0a\u534810.36.59.png",
+  "reference_image_sha256": "3f0e10c855bee90efa774b95e013077168ec1fecea3f9c11a63dde972aa4f4d3",
+  "right_panel_status": "Matched component profiles for Transolver and validation-tuned LTS; explicit forward ranges with backward CUDA kernels correlated via autograd sequence_nr; remaining wall time reported as Unattributable.",
+  "rows": [
+    {
+      "component_breakdown_percent": {
+        "Component adaptation": 0.0,
+        "Latent": 0.23590028560071127,
+        "Mesh FFN": 7.946764079670155,
+        "Mesh\u2192slice": 44.15982124103737,
+        "Other instrumented": 3.282771613467403,
+        "Slice-weight Computation": 40.890357510601255,
+        "Slice\u2192mesh": 3.4843852696230955,
+        "Unattributable": 0.0
+      },
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.004845901430025191,
+        0.004694232656081143,
+        0.004486505551392141
+      ],
+      "display": "Transolver",
+      "equal_field_relative_l2_fraction_mean": 0.020040460654727196,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.020213637915410223,
+        0.020837277163470797,
+        0.019070466885300567
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.0008960454299170604,
+      "equal_field_relative_l2_percent_mean": 2.0040460654727195,
+      "equal_field_relative_l2_percent_sample_std": 0.08960454299170605,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/profiling/matched_h200_20260828/transolver.json",
+      "matched_profile_sha256": "fe96092459ca1207cf0ddc3dee657379660aa5dda0ab5834c7e4d8645f2f0b23",
+      "model": "transolver",
+      "peak_allocated_gib_matched_h200": 28.153944492340088,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.03558137440079526,
+        0.036980321670860454,
+        0.03365442821920899
+      ],
+      "train_step_latency_ms_matched_h200": 192.98376861572265,
+      "train_step_latency_ms_sample_std": 0.09810235430970998
+    },
+    {
+      "component_breakdown_percent": null,
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.006267052151253167,
+        0.004534427582446969,
+        0.005098713197392083
+      ],
+      "display": "GeoTS-FLARE",
+      "equal_field_relative_l2_fraction_mean": 0.011675012649367307,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.011810372340150421,
+        0.011213575470682972,
+        0.012001090137268524
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.00041083636881185896,
+      "equal_field_relative_l2_percent_mean": 1.1675012649367307,
+      "equal_field_relative_l2_percent_sample_std": 0.041083636881185895,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/profiling/matched_h200_20260828/geots_flare.json",
+      "matched_profile_sha256": "34ff224621826e4c9017632211cad799fd5e47c37173a1c6f209c0027f54a354",
+      "model": "geots_flare",
+      "peak_allocated_gib_matched_h200": 29.82786512374878,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.017353692529047678,
+        0.017892723358918974,
+        0.018903467077144964
+      ],
+      "train_step_latency_ms_matched_h200": 276.03157897949217,
+      "train_step_latency_ms_sample_std": 0.09955215285273823
+    },
+    {
+      "component_breakdown_percent": null,
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.008508639209176628,
+        0.003759409957773596,
+        0.005447173788815331
+      ],
+      "display": "GeoTransolver",
+      "equal_field_relative_l2_fraction_mean": 0.012501261927953207,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.014609856730397525,
+        0.010844474998647956,
+        0.012049454054814139
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.0019229203473158168,
+      "equal_field_relative_l2_percent_mean": 1.2501261927953207,
+      "equal_field_relative_l2_percent_sample_std": 0.19229203473158168,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/profiling/matched_h200_20260828/geotransolver.json",
+      "matched_profile_sha256": "07f5112ed8d62cce9bed0e85c4e075ca3a3eea65e82618b2fe18802649b889d9",
+      "model": "geotransolver",
+      "peak_allocated_gib_matched_h200": 45.10204029083252,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.02071107425161842,
+        0.017929540039522317,
+        0.018651734320812945
+      ],
+      "train_step_latency_ms_matched_h200": 361.83545776367185,
+      "train_step_latency_ms_sample_std": 0.304121666932049
+    },
+    {
+      "component_breakdown_percent": null,
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.004461808081762336,
+        0.0056575620522240746,
+        0.0050831330108778655
+      ],
+      "display": "Transolver++",
+      "equal_field_relative_l2_fraction_mean": 0.023650717926914876,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.022533288917440778,
+        0.024443599110644254,
+        0.0239752657526596
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.000995650403987763,
+      "equal_field_relative_l2_percent_mean": 2.3650717926914875,
+      "equal_field_relative_l2_percent_sample_std": 0.0995650403987763,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/profiling/matched_h200_20260828/transolver_plus.json",
+      "matched_profile_sha256": "c1e3f91ece34ea8800587bda26e637209c22ee9ab1ac0f86a4a6c5039905b955",
+      "model": "transolver_plus",
+      "peak_allocated_gib_matched_h200": 2.0265140533447266,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.04060476975311922,
+        0.04322963616906443,
+        0.042867398494441336
+      ],
+      "train_step_latency_ms_matched_h200": 26.99290626525879,
+      "train_step_latency_ms_sample_std": 0.028192610817104013
+    },
+    {
+      "component_breakdown_percent": null,
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.0036777141369232075,
+        0.003900689631570692,
+        0.0037898681815041165
+      ],
+      "display": "Transolver-3",
+      "equal_field_relative_l2_fraction_mean": 0.01978023988540654,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.01983682549600721,
+        0.019351298268487773,
+        0.020152595891724644
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.00040363463521674215,
+      "equal_field_relative_l2_percent_mean": 1.978023988540654,
+      "equal_field_relative_l2_percent_sample_std": 0.04036346352167421,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/profiling/matched_h200_20260828/transolver3.json",
+      "matched_profile_sha256": "0a8a631782613dd7ccfd988f5bc564ebcb54359783f265c950269df3dadac045",
+      "model": "transolver3",
+      "peak_allocated_gib_matched_h200": 3.689708709716797,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.03599593685509121,
+        0.034801906905404856,
+        0.03651532360194517
+      ],
+      "train_step_latency_ms_matched_h200": 184.1681689453125,
+      "train_step_latency_ms_sample_std": 49.97100477381713
+    },
+    {
+      "component_breakdown_percent": {
+        "Component adaptation": 6.305442663971492,
+        "Latent": 6.725859229938388,
+        "Mesh FFN": 4.713074421687286,
+        "Mesh\u2192slice": 25.662559385847864,
+        "Other instrumented": 6.692133591827505,
+        "Slice-weight Computation": 23.10408568749407,
+        "Slice\u2192mesh": 2.051840293296814,
+        "Unattributable": 24.74500472593658
+      },
+      "displacement_physical_relative_l2_fraction_per_seed": [
+        0.006279572647272022,
+        0.006761324148378498,
+        0.005877476335935117
+      ],
+      "display": "LTS",
+      "equal_field_relative_l2_fraction_mean": 0.014902070314426863,
+      "equal_field_relative_l2_fraction_per_seed": [
+        0.01529963024169891,
+        0.014742963185232126,
+        0.014663617516349549
+      ],
+      "equal_field_relative_l2_fraction_sample_std": 0.00034657518033180554,
+      "equal_field_relative_l2_percent_mean": 1.4902070314426863,
+      "equal_field_relative_l2_percent_sample_std": 0.034657518033180554,
+      "matched_profile": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_tuned_20260828/profiling/matched_h200_20260829/lts_ca_fourier_tenv.json",
+      "matched_profile_sha256": "01a1c14d0bc7718293d4cbb9d12ccdb3409ecb61e6a2a5b07fa75258ddc77f18",
+      "model": "lts_ca_fourier_tenv",
+      "peak_allocated_gib_matched_h200": 4.939683437347412,
+      "seeds": [
+        7,
+        17,
+        27
+      ],
+      "stress_physical_relative_l2_fraction_per_seed": [
+        0.0243196878361258,
+        0.022724602222085756,
+        0.02344975869676398
+      ],
+      "train_step_latency_ms_matched_h200": 27.723122596740723,
+      "train_step_latency_ms_sample_std": 0.03655260131113217
+    }
+  ],
+  "source_baseline_main_table": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_20260826/main_table.csv",
+  "source_baseline_main_table_sha256": "a45f87e60d735290be6ac844cfb9c2a93feb4fde011f47f031815d951b159595",
+  "source_tuned_lts_main_table": "/work/choulin420/physicsnemo_data/experiments/droptest_official_backbones_tuned_20260828/deadline_k1_main_table.csv",
+  "source_tuned_lts_main_table_sha256": "a8362dd1c56939214d656924bd5a19dac73d7e1469fe6b5c1aa6324952218724"
+}

@@ -8,7 +8,7 @@ import torch
 from lts.models import LTSConfig, build_lts
 
 
-EXPECTED_PARAMETERS = 8_335_055
+EXPECTED_PARAMETERS = 8_348_175
 
 
 def main() -> None:
@@ -24,7 +24,10 @@ def main() -> None:
         raise SystemExit(
             f"FAIL: parameter count {observed:,} != {EXPECTED_PARAMETERS:,}"
         )
-    print(f"PASS: complete DTOB6-0826 LTS has {observed:,} parameters")
+    print(
+        "PASS: validation-selected DTOB6-0828 LTS has "
+        f"{observed:,} parameters"
+    )
 
 
 if __name__ == "__main__":

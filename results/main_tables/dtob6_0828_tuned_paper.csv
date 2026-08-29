@@ -1,0 +1,7 @@
+model,displacement_rel_l2_percent_mean,displacement_rel_l2_percent_sample_std,stress_rel_l2_percent_mean,stress_rel_l2_percent_sample_std,train_step_latency_ms_mean,train_step_latency_ms_sample_std,peak_train_allocated_gib,inference_latency_ms_per_99step_trajectory_mean,inference_latency_ms_per_99step_trajectory_sample_std,parameters_million
+Transolver,0.4676,0.0180,3.5405,0.1670,192.984,0.098,28.154,4320.382,1.113,8.967
+GeoTransolver,0.5905,0.2407,1.9097,0.1443,361.835,0.304,45.102,10453.148,3.931,27.575
+GeoTS-FLARE,0.5300,0.0884,1.8050,0.0787,276.032,0.100,29.828,9334.003,29.640,26.326
+Transolver++,0.5068,0.0598,4.2234,0.1422,26.993,0.028,2.027,793.783,0.958,1.744
+Transolver-3,0.3789,0.0111,3.5771,0.0879,184.168,49.971,3.690,4463.005,11.213,7.604
+LTS,0.6306,0.0443,2.3498,0.0799,27.723,0.037,4.940,574.236,2.297,8.348

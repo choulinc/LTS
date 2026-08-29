@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Construct LTS and the complete DTOB6-0826 paper model."""
+"""Construct LTS and the validation-selected DropTest paper model."""
 
 from __future__ import annotations
 
@@ -29,8 +29,9 @@ class LTSConfig:
     num_components: int = 17
     fourier: bool = True
     trajectory_envelope: bool = True
-    fourier_bands: int = 10
-    envelope_width: int = 64
+    fourier_bands: int = 16
+    envelope_width: int = 128
+    detach_component_pool_source: bool = True
     activation_checkpointing: bool = False
 
 
@@ -41,7 +42,7 @@ def build_lts(
 ) -> nn.Module:
     """Build an LTS backbone.
 
-    The default configuration is the complete DTOB6-0826 paper model. A fixed
+    The default configuration is the complete DTOB6-0828 paper model. A fixed
     one-dimensional node-to-component mapping is therefore required by
     default. Set ``component_aware=False`` to construct the plain LTS ablation.
 
@@ -80,7 +81,8 @@ def build_lts(
             num_parts=cfg.num_components,
         )
         model.configure_training_pooling(
-            max_reduction="amax", detach_source=False
+            max_reduction="amax",
+            detach_source=cfg.detach_component_pool_source,
         )
         model.configure_training_affine(
             implementation="contiguous_custom_backward"
