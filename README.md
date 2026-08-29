@@ -11,6 +11,13 @@ This repository is the paper-facing source release. It separates reusable
 model code from benchmark adapters, frozen experiment protocols, scheduler
 files, and immutable paper results.
 
+LTS is implemented on [NVIDIA PhysicsNeMo](https://github.com/NVIDIA/physicsnemo),
+not as a standalone reimplementation of the complete framework. The LTS
+backbone is in `src/lts/models/light_transolver.py`; it reuses PhysicsNeMo's
+module base classes, Transolver MLP, and physics-attention projection helpers.
+The dependency and exact historical source boundary are documented in
+[`docs/environment.md`](docs/environment.md).
+
 ## Repository status
 
 The first public snapshot contains the frozen `DTOB6-0826` DropTest protocol,
@@ -67,6 +74,7 @@ complete LTS model (`LTS + CA + Fourier + TEnv`) as **LTS**.
 - Raw three-seed aggregate: [`results/main_tables/dtob6_0826_raw.csv`](results/main_tables/dtob6_0826_raw.csv)
 - Protocol: [`protocols/droptest_dtob6_0826.md`](protocols/droptest_dtob6_0826.md)
 - Ablations: [`experiments/droptest/ablations/README.md`](experiments/droptest/ablations/README.md)
+- Backbone sources: [`docs/backbone_sources.md`](docs/backbone_sources.md)
 
 The held-out test set is used once after validation-only checkpoint selection.
 No held-out trajectory is used for optimization or model selection.

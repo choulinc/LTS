@@ -6,5 +6,15 @@ model:
   layers: 16
   heads: 8
   physics_slices_per_head: 64
+  mlp_ratio: 2
+  dropout: 0.0
+  unified_pos: false
   activation_checkpointing: official_policy
   expected_parameters: 7603844
+
+provenance:
+  repository: https://github.com/thuml/Transolver-3
+  commit: ef4fee9fa08dbfc5af13f9d9b42202dfb34dba37
+  setting_source: main_drivaerml_volume.py
+  implementation_source: models/Transolver_chunk_opt_matrix_mul.py
+  task_adapter_changes: [space_dim, output_semantics]

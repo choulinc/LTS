@@ -6,4 +6,17 @@ model:
   layers: 4
   heads: 8
   physics_slices: 32
+  mlp_ratio: 2
+  dropout: 0.1
+  unified_pos: false
+  activation_checkpointing: author_implementation
+  world_size: 1
+  evaluation_rng_seed: 20260804
   expected_parameters: 1743784
+
+provenance:
+  repository: https://github.com/thuml/Transolver_plus
+  commit: d5a23bc734a0ebac56384cf72049a26af9673452
+  setting_source: main_airplane.py
+  implementation_source: models/Transolver_plus.py
+  task_adapter_changes: [space_dim, output_head, output_semantics]

@@ -25,3 +25,8 @@ model:
     conditioned_by: global_design_variables_and_time
     displacement_only: true
   expected_parameters: 8335055
+
+provenance:
+  implementation: src/lts/models/light_transolver.py
+  matched_backbone_source: configs/droptest/dtob6_0826/transolver.yaml
+  matched_fields: [hidden_dim, layers, heads, physics_slices, mlp_ratio, dropout]

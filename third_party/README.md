@@ -9,5 +9,9 @@ backbone scale used for every baseline. Baseline source should be obtained from
 its official or author-released repository and used under its original license.
 Files copied or adapted from NVIDIA PhysicsNeMo retain Apache-2.0 SPDX headers.
 
-Exact upstream URLs and citations will be maintained in the camera-ready
-release manifest rather than inferred from local cluster paths.
+Exact repositories, commits, setting-source files, task-adapter changes, and
+SHA-256 hashes are recorded in
+[`docs/backbone_sources.md`](../docs/backbone_sources.md) and
+[`metadata/upstream_backbones.yaml`](../metadata/upstream_backbones.yaml).
+Those files supersede ambiguous labels such as `transolver_volume.yaml` without
+a repository-relative path.

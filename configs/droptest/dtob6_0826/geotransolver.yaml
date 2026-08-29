@@ -13,3 +13,9 @@ model:
   radii: [0.01, 0.05, 0.25, 1.0, 2.5, 5.0]
   neighbors_in_radius: [8, 16, 32, 32, 64, 128]
   expected_parameters: 27575024
+
+provenance:
+  repository: https://github.com/NVIDIA/physicsnemo
+  commit: dc244e6747d2fba0bf42656422059349f4861fbc
+  setting_source: examples/cfd/external_aerodynamics/unified_external_aero_recipe/conf/model/geotransolver_volume.yaml
+  task_adapter_changes: [functional_dim, global_dim, output_semantics]

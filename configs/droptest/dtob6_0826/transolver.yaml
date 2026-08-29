@@ -2,7 +2,7 @@ model:
   id: transolver
   label: Transolver
   implementation: physicsnemo.models.transolver.Transolver
-  reference_profile: transolver_volume
+  reference_profile: physicsnemo_unified_external_aero_volume
   hidden_dim: 256
   layers: 12
   heads: 8
@@ -11,3 +11,9 @@ model:
   dropout: 0.0
   activation_checkpointing: false
   expected_parameters: 8967012
+
+provenance:
+  repository: https://github.com/NVIDIA/physicsnemo
+  commit: dc244e6747d2fba0bf42656422059349f4861fbc
+  setting_source: examples/cfd/external_aerodynamics/unified_external_aero_recipe/conf/model/transolver_volume.yaml
+  task_adapter_changes: [functional_dim, embedding_dim, output_semantics]
