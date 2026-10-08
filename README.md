@@ -1,4 +1,12 @@
-# LTS: Lightweight Transolver Surrogate
+# LTS
+
+This repository provides the official implementation of LTS from the following paper.
+
+**LTS: A Lightweight Persistent-Latent Reformulation of Transolver for Transient Impact Simulation**  
+Chia Feng Liao<sup>&#42;</sup>, Lin Chou<sup>&#42;</sup>, Shih-Chi Wang  
+*Representations for the Physical Sciences Workshop at NeurIPS 2026*
+
+<sup>&#42;</sup> Equal contribution.
 
 LTS is a persistent-latent reformulation of Transolver for surrogate modeling
 on large unstructured meshes. It performs mesh-to-latent routing once,
