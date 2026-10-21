@@ -11,9 +11,6 @@ uses the following nested configurations:
 3. LTS with CA, Fourier input encoding, and the trajectory-level displacement
    envelope (TEnv).
 
-The nested comparison measures the complete component stack. It does not
-identify isolated Fourier and D-Scale main effects.
-
 These ablations use the original 10-band, width-64, end-to-end component
 pooling configuration, matching the released DTOB6-0826 main row.
 
