@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "protocol": "single H200; BF16; batch one; preloaded CUDA sample; 20 warmups; 50 measured steps; Python cyclic GC excluded",
+  "profiles": {
+    "transolver": {
+      "train_step_latency_ms_mean": 193.12437805175782,
+      "train_step_latency_ms_sample_std": 0.0838078893551951,
+      "peak_train_allocated_gib": 28.153944492340088,
+      "parameter_count": 8967012
+    },
+    "geots_flare": {
+      "train_step_latency_ms_mean": 276.4314263916016,
+      "train_step_latency_ms_sample_std": 0.3115199777796506,
+      "peak_train_allocated_gib": 29.82786512374878,
+      "parameter_count": 26325968
+    },
+    "geotransolver": {
+      "train_step_latency_ms_mean": 362.13908630371094,
+      "train_step_latency_ms_sample_std": 0.1830163426949791,
+      "peak_train_allocated_gib": 45.10204029083252,
+      "parameter_count": 27575024
+    },
+    "transolver_plus": {
+      "train_step_latency_ms_mean": 26.911303176879883,
+      "train_step_latency_ms_sample_std": 0.0973187332544723,
+      "peak_train_allocated_gib": 2.0265140533447266,
+      "parameter_count": 1743784
+    },
+    "transolver3": {
+      "train_step_latency_ms_mean": 177.1931216430664,
+      "train_step_latency_ms_sample_std": 0.17021922975034293,
+      "peak_train_allocated_gib": 3.689708709716797,
+      "parameter_count": 7603844
+    },
+    "lts": {
+      "train_step_latency_ms_mean": 24.06440574645996,
+      "train_step_latency_ms_sample_std": 0.16235923104019986,
+      "peak_train_allocated_gib": 4.8362040519714355,
+      "parameter_count": 8018444,
+      "raw_train_step_latency_ms": [
+        25.146560668945312,
+        24.146879196166992,
+        24.007328033447266,
+        23.98531150817871,
+        24.04729652404785,
+        24.030784606933594,
+        24.038175582885742,
+        23.982336044311523,
+        24.047775268554688,
+        24.06777572631836,
+        24.047008514404297,
+        23.986719131469727,
+        24.039968490600586,
+        24.069791793823242,
+        24.04435157775879,
+        24.068992614746094,
+        24.021055221557617,
+        24.010400772094727,
+        24.06604766845703,
+        24.030559539794922,
+        24.14236831665039,
+        24.046527862548828,
+        24.09401512145996,
+        24.038272857666016,
+        24.050304412841797,
+        24.154176712036133,
+        24.037343978881836,
+        23.95782470703125,
+        24.057056427001953,
+        24.07263946533203,
+        24.087295532226562,
+        24.026912689208984,
+        24.03366470336914,
+        24.144351959228516,
+        23.95769691467285,
+        24.005823135375977,
+        24.074752807617188,
+        24.035839080810547,
+        24.045984268188477,
+        24.072063446044922,
+        24.004159927368164,
+        23.99113655090332,
+        24.059040069580078,
+        24.041439056396484,
+        24.013599395751953,
+        23.98579216003418,
+        24.028383255004883,
+        24.01263999938965,
+        23.989599227905273,
+        24.074464797973633
+      ]
+    },
+    "lts_ca_fourier_tenv": {
+      "train_step_latency_ms_mean": 29.75493949890137,
+      "train_step_latency_ms_sample_std": 0.21166666256017785,
+      "peak_train_allocated_gib": 4.932037830352783,
+      "parameter_count": 8335055,
+      "raw_train_step_latency_ms": [
+        31.011552810668945,
+        29.842079162597656,
+        29.656831741333008,
+        29.59459114074707,
+        29.669408798217773,
+        29.695199966430664,
+        29.742656707763672,
+        29.66796875,
+        29.683391571044922,
+        29.767423629760742,
+        29.692224502563477,
+        29.70921516418457,
+        30.277311325073242,
+        29.706016540527344,
+        29.705631256103516,
+        29.714879989624023,
+        29.685152053833008,
+        29.617952346801758,
+        29.742528915405273,
+        29.699071884155273,
+        29.728031158447266,
+        29.71436882019043,
+        29.720863342285156,
+        29.687007904052734,
+        29.67465591430664,
+        29.687519073486328,
+        29.721088409423828,
+        29.730592727661133,
+        29.72662353515625,
+        29.667648315429688,
+        29.728351593017578,
+        29.753215789794922,
+        29.71881675720215,
+        29.673120498657227,
+        29.67964744567871,
+        29.706144332885742,
+        29.695615768432617,
+        29.74163246154785,
+        29.695104598999023,
+        29.655391693115234,
+        29.75961685180664,
+        29.720415115356445,
+        29.738943099975586,
+        29.737695693969727,
+        29.761632919311523,
+        29.735872268676758,
+        29.73865509033203,
+        30.16227149963379,
+        29.693952560424805,
+        29.71139144897461
+      ]
+    }
+  },
+  "sources": {
+    "transolver": {
+      "evidence_type": "machine-readable exported profiling summary; original per-step JSON not recovered",
+      "cohort": "matched_h200_paper6_gc_controlled_20260829/attempt_1",
+      "source_export_sha256": "f66b0af460e52abfda4fb5ff9dd04009238d195bb5565755dfa58f70c4e5466d",
+      "recorded_original_profile_sha256": "9680d98e34f8bfb7522fcfc4f14219dc16bf02584925745f3abc32ac87a53e83"
+    },
+    "geots_flare": {
+      "evidence_type": "machine-readable exported profiling summary; original per-step JSON not recovered",
+      "cohort": "matched_h200_paper6_gc_controlled_20260829/attempt_1",
+      "source_export_sha256": "f66b0af460e52abfda4fb5ff9dd04009238d195bb5565755dfa58f70c4e5466d",
+      "recorded_original_profile_sha256": "edc503424d31446e735ab87159946cad4c59712db74148c2529f773502e97746"
+    },
+    "geotransolver": {
+      "evidence_type": "machine-readable exported profiling summary; original per-step JSON not recovered",
+      "cohort": "matched_h200_paper6_gc_controlled_20260829/attempt_1",
+      "source_export_sha256": "f66b0af460e52abfda4fb5ff9dd04009238d195bb5565755dfa58f70c4e5466d",
+      "recorded_original_profile_sha256": "fe37544ec1ab1afb88fe15543227c36313ce5c33ce02c0da34408786b4528179"
+    },
+    "transolver_plus": {
+      "evidence_type": "machine-readable exported profiling summary; original per-step JSON not recovered",
+      "cohort": "matched_h200_paper6_gc_controlled_20260829/attempt_1",
+      "source_export_sha256": "f66b0af460e52abfda4fb5ff9dd04009238d195bb5565755dfa58f70c4e5466d",
+      "recorded_original_profile_sha256": "56e112c39e64186ac9fed94ac2090bf3152189dfa85dcb788e981e8d4575853f"
+    },
+    "transolver3": {
+      "evidence_type": "machine-readable exported profiling summary; original per-step JSON not recovered",
+      "cohort": "matched_h200_paper6_gc_controlled_20260829/attempt_1",
+      "source_export_sha256": "f66b0af460e52abfda4fb5ff9dd04009238d195bb5565755dfa58f70c4e5466d",
+      "recorded_original_profile_sha256": "e44994cb81d27567c598803cf7b40da2aa77bdb47949218886f39611478c09c5"
+    },
+    "lts": {
+      "evidence_type": "original measured-step profiling JSON",
+      "source_json_sha256": "bd5f1013ea3a4d3cc2af492a8753204175f500a93e05d168d8bfdf12cfdad60b",
+      "cohort": "20260830_gc_controlled",
+      "job_id": "309740",
+      "seed": 7,
+      "warmup_steps": 20,
+      "measured_steps": 50
+    },
+    "lts_ca_fourier_tenv": {
+      "evidence_type": "original measured-step profiling JSON",
+      "source_json_sha256": "a8a4ce231fd79bd25ede9386ddb1b8357cd6c8359cc05609a1fa7783cac07d87",
+      "cohort": "20260830_gc_controlled",
+      "job_id": "309740",
+      "seed": 7,
+      "warmup_steps": 20,
+      "measured_steps": 50
+    }
+  },
+  "scope": "Profiling records imported from the original local experiment transfer; five baselines preserve machine-readable summary precision, two LTS profiles include all 50 measured samples. No values are extracted from an image."
+}

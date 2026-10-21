@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "scope": "October 2026 reconstruction; not historical benchmark target identity",
+  "templates": {
+    "starter_sha256": "435499d744ad560a843d9a21210483bbe74c9fc6e2775da4a232ce609cf097e2",
+    "engine_sha256": "1a090204d2913c1759429c45a65d8b67852a1889ed8cac73d6e5eb38cb6d98ff"
+  },
+  "runtime": {
+    "repository": "https://github.com/OpenRadioss/OpenRadioss",
+    "release_tag": "latest-20260728",
+    "release_commit": "a62b27e6baa555d222a580d6218867d0be4d70b5",
+    "binary_authentication_limit": "Locally archived runtime; upstream archive authentication is not claimed beyond retained provenance and executable hashes.",
+    "executables": [
+      {
+        "name": "starter_linux64_gf",
+        "sha256": "65f1bd91c1b1dcad18234aca7797fa9e2c53a1a2cf1a4b3f5d6be4154c62c8e4",
+        "bytes": 20281800
+      },
+      {
+        "name": "engine_linux64_gf",
+        "sha256": "7fdedddbcf5753a53d7c8d8872aa6ead3b4e9983237997f6dd3b8cdd8375e3ed",
+        "bytes": 31117192
+      },
+      {
+        "name": "anim_to_vtk_linux64_gf",
+        "sha256": "a751c4410f82f6ff31c0cfe8a797c2d5ed361b69922e255eaa3343e4cd67e6d6",
+        "bytes": 88360
+      }
+    ]
+  },
+  "audit": {
+    "receipt_sha256": "083966497353c4fb2fcfa9bfdb8f6f555d84ef5135b35322a4fe79326b90f207",
+    "status": "official_reconstruction_complete",
+    "verified_cases": 192,
+    "training_dataset_ready": false,
+    "historical_dynamic_targets_and_normalization_verified": false,
+    "native_frame_histogram": {
+      "100": 144,
+      "101": 48
+    }
+  }
+}

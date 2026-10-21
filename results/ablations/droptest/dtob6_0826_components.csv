@@ -1,0 +1,4 @@
+model,configuration,seeds,position_rel_l2_percent_mean,position_rel_l2_percent_sample_std,displacement_rel_l2_percent_mean,displacement_rel_l2_percent_sample_std,stress_rel_l2_percent_mean,stress_rel_l2_percent_sample_std,training_wall_hours_mean,inference_latency_ms_per_99_step_trajectory,peak_train_allocated_gib,parameters_m
+lts,LTS,7;17;27,0.0095288100,0.0006965279,0.9103037282,0.0665142241,7.8130129078,0.2703682313,6.0778612010,455.5982800097,2.4112305641,8.018444
+lts_ca,LTS + CA,7;17;27,0.0069201272,0.0012733758,0.6610681044,0.1216645398,5.4637053492,1.7341121337,6.5587836583,540.5332774545,2.4132080078,8.248716
+lts_ca_fourier_tenv,LTS + CA + Fourier + TEnv,7;17;27,0.0066996418,0.0007707100,0.6399692106,0.0736263077,2.8456855418,0.6855258717,6.6074160765,567.1843609255,2.4345674515,8.335055

@@ -1,0 +1,24 @@
+{
+  "authority": "Frozen machine-readable per-seed metrics and original profiling export records",
+  "inputs_sha256": {
+    "results/main_tables/dtob6_0826_per_seed_raw.csv": "4904283f5b5225bafab70e3c87dbc55c5a1d5f573d1381bb1e5ec09b65254ce9",
+    "results/profiling/dtob6_0826_gc_controlled.json": "b8560bb3bf9b453326c10ffb9f8d5b0312331a1908cad404b3a7b7765b55336a"
+  },
+  "calculation": "Unrounded per-seed values; arithmetic mean and sample standard deviation; ratio to percent x100; seconds to milliseconds x1000; parameters to millions /1e6.",
+  "display": "Round once, to two decimal places, only in the LaTeX renderer. CSV retains source precision.",
+  "accuracy_and_inference": {
+    "seeds": [
+      7,
+      17,
+      27
+    ],
+    "dispersion": "sample standard deviation"
+  },
+  "training_profile": {
+    "warmup_steps": 20,
+    "measured_steps": 50,
+    "python_cyclic_gc_excluded": true,
+    "source_limit": "Five baselines retain exported summaries and original profile hashes; two LTS variants retain all measured-step samples. See profiling evidence for source types."
+  },
+  "paper_csv_sha256": "dc7fd8d278c653f0491b8cc528815a581fe1b75fbead7029949d85608fe88aa2"
+}

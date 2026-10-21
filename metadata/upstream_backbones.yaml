@@ -1,0 +1,43 @@
+schema_version: 1
+
+physicsnemo_runtime:
+  distribution: nvidia-physicsnemo
+  import_package: physicsnemo
+  upstream_repository: https://github.com/NVIDIA/physicsnemo
+  historical_repository: https://github.com/Russell512/physicsnemo-persistent-routing
+  historical_commit: 7676ad43105d11046c38dcdb73a2f2ecde40d4ed
+  imported_files:
+    physicsnemo/models/transolver/transolver.py: 4aaa2631e5fd7899037b249a662acce078b967e72e11e468753573f3a79ab78c
+    physicsnemo/nn/module/physics_attention.py: b5b9c709e3ea371d244d2d78a529f1f522b418b3013a1339d611828a48658d67
+    physicsnemo/core/meta.py: 9919eb63718769547631191aa1479e6c9d22387084f5feae08b5cf6c83babcce
+    physicsnemo/core/module.py: feae766a4a44a9fe17e6d14732a1d2ae0fca873c85d50181a0614d6fa356a244
+
+physicsnemo_profiles:
+  repository: https://github.com/NVIDIA/physicsnemo
+  commit: dc244e6747d2fba0bf42656422059349f4861fbc
+  transolver_volume:
+    path: examples/cfd/external_aerodynamics/unified_external_aero_recipe/conf/model/transolver_volume.yaml
+    sha256: 61a2a0e7b65e931673aee68ced34aedbee1775cfdf9d07d51a23616af4fe57af
+  geotransolver_volume:
+    path: examples/cfd/external_aerodynamics/unified_external_aero_recipe/conf/model/geotransolver_volume.yaml
+    sha256: 66851e5b25b16beea0aac6e37ccc14e5cad226da35e8ebfa60fafc7cb3c2df70
+
+author_released_profiles:
+  transolver_plus:
+    repository: https://github.com/thuml/Transolver_plus
+    commit: d5a23bc734a0ebac56384cf72049a26af9673452
+    setting_source:
+      path: main_airplane.py
+      sha256: 713e9f53a4da9e36602105eeb4648f4bd87ffae9e570a122394b9070a6e5ff1c
+    implementation_source:
+      path: models/Transolver_plus.py
+      sha256: b5b73c2b1f21f06397bd53d800bb70627033920e5c95d4ecb2b0527cfc225a24
+  transolver3:
+    repository: https://github.com/thuml/Transolver-3
+    commit: ef4fee9fa08dbfc5af13f9d9b42202dfb34dba37
+    setting_source:
+      path: main_drivaerml_volume.py
+      sha256: 720217ca7e734aaa553923e413964d7d7efa5502fe1e32d55ad0b462b24b0dd0
+    implementation_source:
+      path: models/Transolver_chunk_opt_matrix_mul.py
+      sha256: 2dc6476d64613b66e0da285e676bd87ffd6110b49ff4c2d53ed4e9013309562c

@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Experiment artifacts are external by design.
+/data/
+/datasets/
+/checkpoints/
+/outputs/
+/runs/
+/wandb/
+*.pt
+*.pth
+*.ckpt
+*.vtu
+*.vtp
+*.vti
+*.tar.gz
+
+# Local paths and credentials must never be committed.
+.env
+.env.*
+!.env.example
+local.yaml
+secrets/

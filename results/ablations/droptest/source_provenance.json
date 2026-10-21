@@ -1,0 +1,41 @@
+{
+  "csv_import_policy": "LF-normalized release tables. Original import artifacts are retained in the local archival backup.",
+  "sources": [
+    {
+      "repository_file": "dtob6_0826_routing_k_raw.csv",
+      "repository_sha256": "a5cefe8b0b226deb59eaebb72b1f6febb7bbeb6870ef1fe1dd0ca6289f2bbcf0",
+      "source_sha256": "3417b8b7be61ce1a3713b902e3b57f3ea490befb8c6a91669b71619322111e61",
+      "released_routing_cycles": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ]
+    },
+    {
+      "repository_file": "dtob6_0826_routing_k_per_seed_raw.csv",
+      "repository_sha256": "cd9db36540628a5ec281864ba9c1d45767d3fb9f5e0491ef4de2d159f6803eb9",
+      "source_sha256": "f2518c1185f98bc0a4d310dfeba1b7ae9c5bda39c8d0364b75bab1efb78803af",
+      "released_routing_cycles": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        12
+      ]
+    },
+    {
+      "repository_file": "legacy_0813_routing_k_l8_raw.csv",
+      "repository_sha256": "ce39a8669dd083bc9d6fe06b98ba5f476282a8c8128b51c03dd0d5ae4ba357ff",
+      "source_sha256": "e80e84e80f53e786f0ec11ac0aa28e156fb88c441e7b84dfc2569519b2db037f",
+      "released_routing_cycles": [
+        1,
+        2,
+        4
+      ]
+    }
+  ]
+}

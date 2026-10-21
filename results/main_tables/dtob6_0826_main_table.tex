@@ -1,0 +1,40 @@
+% Generated from frozen per-seed metrics and original profiling exports.
+\begin{table*}[!t]
+  \centering
+  \caption{Main results on DropTest under a unified evaluation and single-H200 profiling protocol.}
+  \label{tab:main_results}
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.12}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lcccccc}
+    \toprule
+    & \multicolumn{2}{c}{Accuracy} & \multicolumn{4}{c}{Efficiency} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-7}
+    Model & Disp. Rel. $\mathrm{L}_2\downarrow$ & Stress Rel. $\mathrm{L}_2\downarrow$
+    & Train-step Latency $\downarrow$ & Peak Train Alloc. Mem. $\downarrow$
+    & Inference Latency $\downarrow$ & Params. \\
+    & (\%) & (\%) & (ms/step) & (GiB) & (ms/traj.) & (M) \\
+    \midrule
+    Transolver & $\underline{0.47 \pm 0.02}$ & $3.54 \pm 0.17$ & $193.12 \pm 0.08$ & $28.15$ & $4320.38 \pm 1.11$ & $8.97$ \\
+    GeoTransolver & $0.59 \pm 0.24$ & $\underline{1.91 \pm 0.14}$ & $362.14 \pm 0.18$ & $45.10$ & $10453.15 \pm 3.93$ & $27.58$ \\
+    GeoTS-FLARE & $0.53 \pm 0.09$ & $\mathbf{1.80 \pm 0.08}$ & $276.43 \pm 0.31$ & $29.83$ & $9334.00 \pm 29.64$ & $26.33$ \\
+    Transolver++ & $0.51 \pm 0.06$ & $4.22 \pm 0.14$ & $\underline{26.91 \pm 0.10}$ & $\mathbf{2.03}$ & $793.78 \pm 0.96$ & $\mathbf{1.74}$ \\
+    Transolver-3 & $\mathbf{0.38 \pm 0.01}$ & $3.58 \pm 0.09$ & $177.19 \pm 0.17$ & $\underline{3.69}$ & $4463.00 \pm 11.21$ & $\underline{7.60}$ \\
+    \midrule
+    LTS (Base) & $0.91 \pm 0.07$ & $7.81 \pm 0.27$ & $\mathbf{24.06 \pm 0.16}$ & $4.84$ & $\mathbf{455.60 \pm 4.22}$ & $8.02$ \\
+    \textbf{LTS (Full)} & $0.64 \pm 0.07$ & $2.85 \pm 0.69$ & $29.75 \pm 0.21$ & $4.93$ & $\underline{567.18 \pm 1.72}$ & $8.34$ \\
+    \scriptsize vs. Transolver & \scriptsize $\uparrow 0.17\,\mathrm{pp}$ & \scriptsize $\downarrow 0.69\,\mathrm{pp}$ & \scriptsize $\downarrow 84.6\%$ & \scriptsize $\downarrow 82.5\%$ & \scriptsize $\downarrow 86.9\%$ & \scriptsize $\downarrow 7.0\%$ \\
+    \bottomrule
+  \end{tabular}%
+  }
+  \par\smallskip
+  \begin{minipage}{\textwidth}
+  \small
+  \textbf{Notes.} Accuracy and 99-query latency are mean $\pm$ sample s.d.
+  over seeds $\{7,17,27\}$. Seed-7 H200 training latency uses 50 timed steps
+  after 20 warm-up steps, with Python cyclic GC excluded; peak memory is the
+  maximum allocated during profiling.
+  Base disables CA, Fourier, and D-Scale; Full enables all three. Only CA uses
+  component labels. Detailed settings are in Appendix B.1.
+  \end{minipage}
+\end{table*}

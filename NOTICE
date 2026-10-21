@@ -1,0 +1,10 @@
+LTS: Lightweight Transolver Surrogate
+
+This product includes software developed by NVIDIA Corporation and affiliates
+as part of PhysicsNeMo. Those files retain their original copyright and SPDX
+notices and are used under the Apache License, Version 2.0.
+
+Transolver, Transolver++, Transolver-3, GeoTransolver, and GeoTS-FLARE are
+third-party research works. Their names are used only to identify evaluated
+baselines. Their source code and model weights are governed by their upstream
+licenses.

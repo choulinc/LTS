@@ -1,0 +1,50 @@
+# Release audit
+
+The initial source release was audited against the historical `DTOB6-0826`
+implementation before publication. The released default uses DTOB6-0826.
+
+## Model identity
+
+At seed 7, the historical complete LTS constructor and the initial release
+constructor with 10 Fourier bands, envelope width 64, and end-to-end component
+pooling produced:
+
+- identical ordered `state_dict` keys: 169 versus 169;
+- zero missing or additional tensors;
+- byte-equal values for every tensor;
+- identical parameter count: 8,335,055.
+
+The comparison used the same fixed 17-component topology and reset the PyTorch
+seed immediately before each constructor. This checks not only parameter count
+but module construction order, initialization, Fourier projection, component
+adaptation, and trajectory-envelope state.
+
+The current `build_lts(LTSConfig())` default uses 10 Fourier bands, envelope
+width 64, end-to-end component pooling, and 8,335,055 parameters.
+
+## Functional smoke test
+
+A reduced-width LTS with component adaptation, Fourier features, and trajectory
+envelope completed a CPU forward pass with output shape `[1, 6, 4]`; every
+output was finite.
+
+## Automated checks
+
+- unit tests cover frozen protocol fields, held-out-test isolation, paper-table
+  schema and the DTOB6-0826 model identity;
+- split files reproduce the frozen ordered-ID SHA-256 values;
+- no committed file exceeds 1 MiB;
+- no private-key or common credential pattern is present;
+- no broken symlink is present.
+
+Historical reference sources intentionally retain old absolute cluster paths
+to preserve their source hashes. Active configs and scripts do not use them.
+
+## Current paper table
+
+The released seven-row table is recomputed from machine-readable sources, with
+LTS (Base) and LTS (Full), training-step latency, and full-precision CSV values.
+`results/main_tables/paper_table_provenance.json` records its source hashes and measurement
+boundaries. Profiling evidence types and rounding differences are documented
+in `results/README.md`. Reference runners and release tables use the routing
+sets stated in `protocols/droptest_ablations.md`.

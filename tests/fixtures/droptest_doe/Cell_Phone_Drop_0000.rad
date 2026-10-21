@@ -1,0 +1,29 @@
+# Artificial parser fixture, authored for LTS; Apache-2.0.
+# Not a runnable physics model or an extract of the Altair sample.
+/MAT/ELAST/1
+synthetic polymer
+# E nu
+2000 0.4
+/MAT/ELAST/4
+synthetic battery
+# E nu
+2000 0.3
+/MAT/ELAST/5
+synthetic glass
+# E nu
+70000 0.3
+/MAT/ELAST/8
+synthetic PCB
+# E nu
+15000 0.3
+/MAT/ELAST/9
+synthetic composite
+# E nu
+2000 0.3
+/RWALL/PLANE/1
+synthetic wall
+2 0 0 0
+32 0.3 0 0
+0 0 0
+0 0 1
+/END
