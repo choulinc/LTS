@@ -1,0 +1,55 @@
+{
+  "repo": "https://github.com/NVIDIA/physicsnemo",
+  "commit": "9303b6580fe852595e235898688a317f9c04c7ba",
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/LICENSE.txt",
+      "bytes": 11314,
+      "sha256": "f804cfd52b3bacfd16cb9e80c1af55ccd97a0c41159fc06452d7b8b44432149f"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/README.md",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/README.md",
+      "bytes": 10988,
+      "sha256": "3cabd7c9bf46f5167d4d55be91a7ca5bb78eaefaf1e1d74704e80205a1da4764"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/drop_test/generate_dataset.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/drop_test/generate_dataset.py",
+      "bytes": 10723,
+      "sha256": "eeaa9eed5cb2ef0826ea497b71f18fe1e142261abc5c3f3e8cb75ebde0491efd"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/drop_test/run_simulations.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/drop_test/run_simulations.py",
+      "bytes": 1770,
+      "sha256": "1d94724e4bfb169870d240a3c0768ead44b7322c5ba8a389f0e5feff7c346e47"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/drop_test/restructure_global_features.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/drop_test/restructure_global_features.py",
+      "bytes": 3322,
+      "sha256": "657ea86915dbd46005197eb55698044764591cc2c2f2a1c51d53dcdf43ffa4c3"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/common/radioss_runner.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/common/radioss_runner.py",
+      "bytes": 6811,
+      "sha256": "2c19395fd94ab25486f813766bc356ad0377aa827e2e1d3b7665681fd1c748e1"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/common/summary_utils.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/common/summary_utils.py",
+      "bytes": 1776,
+      "sha256": "b688e006da1b39f277dae79abd04d240b85b7fe274aa496faa0ccdafca55558d"
+    },
+    {
+      "path": "examples/structural_mechanics/openradioss_dataset_gen/common/rename_d3plot.py",
+      "url": "https://raw.githubusercontent.com/NVIDIA/physicsnemo/9303b6580fe852595e235898688a317f9c04c7ba/examples/structural_mechanics/openradioss_dataset_gen/common/rename_d3plot.py",
+      "bytes": 3120,
+      "sha256": "a66fa330ed6713bcfde361a6d6ad30d0acc672d72874404b9fa1f62dd2a5cfda"
+    }
+  ],
+  "scope": "Unmodified official source snapshot; execution/output wrappers are separate"
+}

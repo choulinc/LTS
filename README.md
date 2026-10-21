@@ -52,6 +52,12 @@ slurm/                          cluster launch templates
 tests/                          architecture and protocol invariants
 ```
 
+## DOE and dataset generation
+
+The [OpenRadioss DropTest192 recipe](docs/droptest_doe.md) documents all
+192 designs, template and solver provenance, generation commands, ETL,
+exclusion rules and the connection to the frozen split.
+
 ## Installation
 
 Create an environment containing the PhysicsNeMo version documented in

@@ -3,3 +3,6 @@
 *.yaml text eol=lf
 *.yml text eol=lf
 *.csv text eol=lf
+
+# Preserve canonical serializer bytes and their SHA-256.
+/metadata/doe/droptest192/planned_doe.csv -text whitespace=cr-at-eol

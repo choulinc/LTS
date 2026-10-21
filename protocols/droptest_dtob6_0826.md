@@ -26,6 +26,10 @@ Mises stress. Displacement training uses train-only axis-wise RMS scaling with
 no mean subtraction. Stress uses train-only standardization. Validation and
 test outputs are inverse-transformed before physical Relative-L2 evaluation.
 
+The [DOE and regeneration recipe](../docs/droptest_doe.md) releases the full
+case-ID manifest and pinned generator. Reconstructed simulations require
+separate verification before use with this frozen benchmark.
+
 ## Optimization and selection
 
 Every model uses 25 epochs, Adam at `1e-4`, cosine decay to `3e-7`, BF16

@@ -15,3 +15,10 @@ SHA-256 hashes are recorded in
 [`metadata/upstream_backbones.yaml`](../metadata/upstream_backbones.yaml).
 Those files supersede ambiguous labels such as `transolver_volume.yaml` without
 a repository-relative path.
+
+The unmodified DropTest DOE source snapshot in `physicsnemo_doe/` is from
+NVIDIA PhysicsNeMo commit `9303b6580fe852595e235898688a317f9c04c7ba`,
+under Apache-2.0. Its `source_receipt.json` records upstream URLs and file
+hashes; `LICENSE.txt` and original notices are retained. Altair model decks
+are separately licensed CC BY-NC 4.0 and are not included. See the
+[DOE recipe](../docs/droptest_doe.md) for the redistribution boundary.
